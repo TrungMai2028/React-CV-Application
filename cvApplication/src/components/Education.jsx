@@ -1,5 +1,6 @@
 import React from 'react';
 import SectionEntry from './SectionEntry';
+import EditButton from './EditButton';
 
 const EducationSection = () => {
   const educationData = [
@@ -21,7 +22,13 @@ const EducationSection = () => {
 
   return (
     <section className="resume-section">
-      <h2>Education</h2>
+      <div className="section-header">
+        <h2 className="section-title">Education</h2>
+        <EditButton />
+      </div>
+
+      <hr className="section-divider" />
+      
       {educationData.map((edu, idx) => (
         <SectionEntry
           key={idx}

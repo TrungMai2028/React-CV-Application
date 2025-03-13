@@ -14,6 +14,9 @@ const SectionEntry = ({
         <h3 className="section-entry-title">{title}</h3>
         <span className="section-entry-date">{dateRange}</span>
       </div>
+      
+      
+
       {subtitle && <p className="section-entry-subtitle">{subtitle}</p>}
       {location && <p className="section-entry-location">{location}</p>}
 

@@ -22,10 +22,21 @@ body {
   margin-bottom: 2rem;
 }
 
+.resume-entry-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Ensures the edit button moves to the right */
+  position: relative;
+  width: 100%;
+}
+
 .resume-name {
-  font-size: 2rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   margin: 0;
 }
+
 
 .resume-location {
   margin: 0.5rem 0;
@@ -48,19 +59,53 @@ body {
   text-decoration: underline;
 }
 
+/* EditButtons */
+.edit-button {
+  margin-left: auto;
+}
+
+.edit-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.edit-button:hover {
+  background-color: #0056b3;
+}
+
 /* Section styles */
 .resume-section {
   margin-bottom: 2rem;
 }
 
 .resume-section h2 {
-  margin-bottom: 1rem;
-  border-bottom: 2px solid #eee;
-  padding-bottom: 0.5rem;
   font-size: 1.4rem;
 }
 
 /* Section Entry */
+.section-header {
+  display: flex;
+  justify-content: space-between; /* Title on left, button on right */
+  align-items: center; /* Aligns elements vertically */
+}
+
+.section-divider {
+  border: none;
+  border-top: 1px solid #ddd; /* Creates the bottom line */
+  margin-top: 5px; /* Adjust spacing between header and line */
+  width: 100%; /* Ensures the line spans full width */
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
 .section-entry {
   margin-bottom: 1.5rem;
 }
@@ -110,3 +155,62 @@ body {
 .section-entry-bullets li {
   margin-bottom: 0.25rem;
 }
+
+/* ProjectSection.css */
+
+/* Container for the entire project entry */
+.project-entry {
+  margin-bottom: 1.5rem;
+}
+
+/* Row containing links (on the left) and title (on the right) */
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Links container */
+.project-links {
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+  font-weight: bold; /* can be omitted if you want a different design */
+}
+
+/* Each link styling */
+.project-links a {
+  text-decoration: none;
+  color: #2c3e50;
+  border-bottom: 2px solid #2c3e50;
+  transition: color 0.2s ease-in-out;
+}
+
+/* Hover effect */
+.project-links a:hover {
+  color: #007bff;
+  border-bottom: 2px solid #007bff;
+}
+
+/* The separator between links (e.g., "|" ) */
+.project-links .divider {
+  margin: 0 0.3rem;
+}
+
+/* Project title (on the right) */
+.project-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* Bullets container */
+.project-bullets {
+  margin-left: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.project-bullets li {
+  margin-bottom: 0.25rem;
+}
+
