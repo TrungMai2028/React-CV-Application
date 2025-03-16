@@ -69,6 +69,7 @@ body {
   color: #fff;
   border: none;
   padding: 0.4rem 0.8rem;
+  margin-bottom: 10px;
   border-radius: 4px;
   cursor: pointer;
 }
@@ -91,6 +92,7 @@ body {
   display: flex;
   justify-content: space-between; /* Title on left, button on right */
   align-items: center; /* Aligns elements vertically */
+  margin-bottom: 10px;
 }
 
 .section-divider {
@@ -214,8 +216,7 @@ body {
   margin-bottom: 0.25rem;
 }
 
-/* EditEducationForm.css (or wherever your styles live) */
-/* Each education block */
+/* Form */
 .edit-education-form {
   position: relative;
   border: 1px solid #ccc;
@@ -292,7 +293,7 @@ body {
   color: #fff;
 }
 
-
+/* Edit Header Form */
 .edit-header-form {
   display: grid;
   grid-template-columns: 1fr 1fr; /* two columns */
