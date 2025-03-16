@@ -11,6 +11,8 @@ const Header = () => {
     location: 'Texas, USA',
     phone: '123-456-7890',
     email: 'jake@supd.io',
+    linkedin: 'https://www.linkedin.com/feed/',
+    github: 'https://github.com/',
   });
 
   const handleEditClick = () => {

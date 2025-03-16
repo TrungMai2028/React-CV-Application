@@ -60,6 +60,26 @@ const EditHeaderForm = ({ data, onSave, onCancel }) => {
         />
       </label>
 
+      <label>
+        LinkedIn:
+        <input
+          type="url"
+          name="linkedin"
+          value={formData.linkedin}
+          onChange={handleChange}
+        />
+      </label>
+
+      <label>
+        GitHub:
+        <input
+          type="url"
+          name="github"
+          value={formData.github}
+          onChange={handleChange}
+        />
+      </label>
+
       <div className="form-buttons">
         <button className="save-button" type="button" onClick={handleSaveClick}>
           Save
