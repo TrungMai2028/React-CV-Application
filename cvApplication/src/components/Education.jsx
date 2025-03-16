@@ -38,15 +38,6 @@ const EducationSection = () => {
     setIsEditing(false);
   };
 
-  // Function to add a new education entry
-  const addEducationEntry = (newEntry) => {
-    // Create a new key. You could also use a library like uuid for unique IDs.
-    const newKey = `edu${Date.now()}`;
-    setEducationData(prevData => ({
-      ...prevData,
-      [newKey]: newEntry,
-    }));
-  };
 
   return (
     <section className="resume-section">

@@ -293,3 +293,51 @@ body {
 }
 
 
+.edit-header-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two columns */
+  gap: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.edit-header-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+}
+
+.edit-header-form input {
+  margin-top: 0.3rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-buttons {
+  grid-column: 1 / -1; /* span both columns */
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.save-button,
+.cancel-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.save-button {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.cancel-button {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+
