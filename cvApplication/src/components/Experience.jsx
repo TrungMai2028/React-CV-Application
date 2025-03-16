@@ -38,7 +38,7 @@ const ExperienceSection = () => {
 
   const handleSave = (updatedData) => {
     // updatedData should be an object with the same structure
-    setEducationData(updatedData);
+    setExperienceData(updatedData);
     setIsEditing(false);
   };
 

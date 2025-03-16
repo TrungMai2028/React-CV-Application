@@ -1,7 +1,7 @@
 import Header from './components/Header';
 import Education from './components/Education';
 import Experience from './components/Experience';
-import ProjectSection from './components/ProjectSection';
+import Project from './components/Project';
 import TechnicalSkills from './components/TechnicalSkills';
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
       <Header />
       <Education />
       <Experience />
-      <ProjectSection />
+      <Project />
       <TechnicalSkills />
       
     </div>

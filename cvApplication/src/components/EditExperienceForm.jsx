@@ -3,13 +3,9 @@ import React, { useState } from 'react';
 const EditExperienceForm = ({ data, onSave, onCancel }) => {
   // Make a copy of the incoming data so we can edit locally
   const [formData, setFormData] = useState(() => {
-    // If data is already a plain object, you can just do:
-    // return { ...data };
-    // But if you want a deeper copy (and data might be nested), do:
     return JSON.parse(JSON.stringify(data));
   });
 
-  // Called whenever a user edits a field (Institution, Location, etc.)
   const handleEntryChange = (entryKey, field, value) => {
     setFormData((prev) => ({
       ...prev,
@@ -20,7 +16,19 @@ const EditExperienceForm = ({ data, onSave, onCancel }) => {
     }));
   };
 
-  // Delete an education entry
+  // Convert the comma-separated string back into an array of bullets
+  const handleBulletsChange = (entryKey, newString) => {
+    const newBullets = newString.split(',').map((bullet) => bullet.trim());
+    setFormData((prev) => ({
+      ...prev,
+      [entryKey]: {
+        ...prev[entryKey],
+        bullets: newBullets,
+      },
+    }));
+  };
+
+  // Delete an entire experience entry
   const handleDelete = (entryKey) => {
     setFormData((prev) => {
       const copy = { ...prev };
@@ -29,9 +37,9 @@ const EditExperienceForm = ({ data, onSave, onCancel }) => {
     });
   };
 
-  // Add a new blank education entry
+  // Add a new blank experience entry
   const handleAdd = () => {
-    const newKey = 'edu' + Date.now(); // or use a UUID library
+    const newKey = 'edu' + Date.now();
     setFormData((prev) => ({
       ...prev,
       [newKey]: {
@@ -39,12 +47,11 @@ const EditExperienceForm = ({ data, onSave, onCancel }) => {
         company: '',
         location: '',
         dateRange: '',
-        bullets: '',
+        bullets: [],
       },
     }));
   };
 
-  // When the user clicks "Save", pass the updated object back up
   const handleSaveClick = () => {
     onSave(formData);
   };
@@ -67,9 +74,7 @@ const EditExperienceForm = ({ data, onSave, onCancel }) => {
             <input
               type="text"
               value={edu.title}
-              onChange={(e) =>
-                handleEntryChange(key, 'title', e.target.value)
-              }
+              onChange={(e) => handleEntryChange(key, 'title', e.target.value)}
             />
           </label>
 
@@ -78,9 +83,7 @@ const EditExperienceForm = ({ data, onSave, onCancel }) => {
             <input
               type="text"
               value={edu.company}
-              onChange={(e) =>
-                handleEntryChange(key, 'company', e.target.value)
-              }
+              onChange={(e) => handleEntryChange(key, 'company', e.target.value)}
             />
           </label>
 
@@ -89,7 +92,9 @@ const EditExperienceForm = ({ data, onSave, onCancel }) => {
             <input
               type="text"
               value={edu.location}
-              onChange={(e) => handleEntryChange(key, 'location', e.target.value)}
+              onChange={(e) =>
+                handleEntryChange(key, 'location', e.target.value)
+              }
             />
           </label>
 
@@ -108,8 +113,8 @@ const EditExperienceForm = ({ data, onSave, onCancel }) => {
             Bullets:
             <input
               type="text"
-              value={edu.bullets}
-              onChange={(e) => handleEntryChange(key, 'bullets', e.target.value)}
+              value={edu.bullets.join(', ')}
+              onChange={(e) => handleBulletsChange(key, e.target.value)}
             />
           </label>
         </div>
